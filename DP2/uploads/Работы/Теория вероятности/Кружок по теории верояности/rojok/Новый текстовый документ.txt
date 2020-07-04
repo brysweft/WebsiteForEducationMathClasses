@@ -1,0 +1,31 @@
+
+              var z, b, x, y, rez;
+              with (Math) {
+
+                  x = round(random()) * 11;
+                  y = round(random()) * 11;
+                  z = round((random()*10) / 5);
+              }
+
+              if (z == 0) {
+                  rez = x + y;
+              }
+              else {
+                  if (x < y) {
+                      b = x;
+                      x = y;
+                      y = b;
+                  }
+                  rez = x - y;
+              }
+
+              switch (z) {
+                  case 0:
+                      {
+                          document.getElementById("ContentPlaceHolder1_Label1").value = x + " + " + y + " = ";
+                      }
+                  case 1:
+                      {
+                          document.getElementById("ContentPlaceHolder1_Label1").value = x + " - " + y + " = ";
+                      }
+              }

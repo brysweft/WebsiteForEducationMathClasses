@@ -1,0 +1,284 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FaceSite.master.cs" Inherits="DP2.face.FaceSite" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+   <link href="../visitor/Main.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+
+        .style2
+        {
+        }
+        .style3
+        {
+            height: 23px;
+        }
+        .style5
+        {
+            height: 23px;
+            width: 664px;
+        }
+        .style6
+        {
+            width: 200px;
+        }
+        .style7
+        {
+            height: 23px;
+        }
+   </style>
+
+          <script language="javascript" type="text/javascript" >
+
+
+
+              function MouseFocus(id) {
+                  //Меняет стиль элемента при на ведении мышки
+                  var d, e;
+                  //Получаем Id северного элемента
+
+                  d = id.slice(0, 4);
+                  e = id.slice(4, id.lenght);
+                 
+
+                  if (d == "div1") {
+
+                      document.getElementById(e).style.cssText = " color: #FFFFFF; font:   14pt Times New Roman;";
+                  }
+                  if (d == "div2") {
+
+                      document.getElementById(e).style.cssText = " color: #FFFFFF; font:   12pt Times New Roman; text-decoration: none; ";
+                  }
+
+                  if (d == "div3") {
+
+                      document.getElementById(e).style.cssText = " color: Maroon; font:   14pt Times New Roman; text-decoration: none; ";
+                  }
+                  if (d == "ach1") {
+
+                      document.getElementById(e).style.cssText = "height: 170px;  width: 170px;";
+                  }
+                  
+           
+              }
+
+              function MouseLost(id) {
+                  // меняет стиль при потере фокуса мыши
+
+                  var d, e;
+                  //Получаем Id северного элемента
+
+                  d = id.slice(0, 4);
+                  e = id.slice(4, id.lenght);
+
+                 
+
+                  if (d == "div1") {
+
+                      document.getElementById(e).style.cssText = "color: #7C6F57; font: 14pt Times New Roman; text-decoration: none; ";
+                  }
+                  if (d == "div2") {
+
+                      document.getElementById(e).style.cssText = " color: Maroon; font:   12pt Times New Roman;";
+                  }
+
+                  if (d == "div3") {
+
+                      document.getElementById(e).style.cssText = " font:   12pt Times New Roman; ";
+                  }
+                  if (d == "ach1") {
+
+                      document.getElementById(e).style.cssText = " height: 150px;  width: 150px; ";
+                  }
+                 
+              }
+
+    </script>
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table style="width:100%;">
+            <tr>
+                <td class="ВерхнееМеню" colspan="3" align="right" dir="rtl" valign="bottom" 
+                    bgcolor="#F7F6F3">
+<table width="600">
+                        <tr>
+                            <td>
+                            <div  id="div1LoginStatus1" onmouseover=" MouseFocus(id)" onmouseout="  MouseLost(id)">
+                                <asp:LoginStatus ID="LoginStatus1" runat="server" Font-Size="14pt" Font-Underline="False" 
+                        ForeColor="#7C6F57" 
+                        LogoutPageUrl="~/visitor/index.aspx" LogoutAction="Redirect" />
+                        </div>
+                            </td>
+                            <td>
+                      <asp:Menu ID="Menu2" runat="server"  
+                      staticsubmenuindent="10px" BackColor="Black" 
+                        DynamicHorizontalOffset="2" Font-Names="Times New Roman" Font-Size="14pt" 
+                        ForeColor="#7C6F57" BorderColor="#654833" 
+                        Orientation="Horizontal" RenderingMode="Table" Visible="False" 
+                                    CssClass="МенюПользователя"  >
+                        <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White"  CssClass="МенюПользователя" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px"  CssClass="МенюПользователя" />
+                        <DynamicMenuStyle BackColor="#2A2A2A"  CssClass="МенюПользователя" />
+                        <DynamicSelectedStyle BackColor="#FFCC99"  CssClass="МенюПользователя" />
+                            <LevelMenuItemStyles>
+                                <asp:MenuItemStyle Font-Underline="True"  ForeColor="#B32436" />
+                            </LevelMenuItemStyles>
+                        <StaticHoverStyle BackColor="#191919" ForeColor="White"  CssClass="МенюПользователя" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px"  CssClass="МенюПользователя" />
+                        <StaticSelectedStyle BackColor="#C5BEBE"  CssClass="МенюПользователя" />
+                            <Items>
+                                <asp:MenuItem Text="Пользователь" Value="Пользователь" 
+                                    PopOutImageUrl="~/Properties/images/arrowdown.gif">
+                                    <asp:MenuItem NavigateUrl="~/face/kab.aspx" Text="Личный кабинет" 
+                                        Value="Личный кабинет"></asp:MenuItem>
+                                    <asp:MenuItem Text="Мой профиль" Value="Мой профиль" 
+                                        NavigateUrl="~/face/profile.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Сообщения" Value="Сообщения" 
+                                        NavigateUrl="~/face/message.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Настроить" Value="Настроить" 
+                                        NavigateUrl="~/face/settings.aspx"></asp:MenuItem>
+                                </asp:MenuItem>
+                            </Items>
+                    </asp:Menu>
+
+
+
+                            </td>
+                            <td>
+                            <div  id="div1LinkButton3" onmouseover=" MouseFocus(id)" onmouseout="  MouseLost(id)">
+                                <asp:LinkButton ID="LinkButton3" runat="server" Font-Names="Times New Roman" Font-Size="14pt" 
+                        Font-Underline="False" ForeColor="#7C6F57" 
+                        PostBackUrl="~/visitor/registration.aspx">Регистрация</asp:LinkButton>
+                       </div>
+                            </td>
+                            <td>
+                            <div  id="div1LinkButton1" onmouseover=" MouseFocus(id)" onmouseout="  MouseLost(id)">
+                                <asp:LinkButton ID="LinkButton1" runat="server" Font-Names="Times New Roman" 
+                        Font-Size="14pt" Font-Underline="False" ForeColor="#7C6F57" 
+                        PostBackUrl="~/visitor/obrsvyaz.aspx">Обратная связь</asp:LinkButton>
+                            </div>
+                            </td>
+                            <td>
+                            <div  id="div1LinkButton2" onmouseover=" MouseFocus(id)" onmouseout="  MouseLost(id)">
+                    <asp:LinkButton ID="LinkButton2" runat="server" Font-Names="Times New Roman" 
+                        Font-Overline="False" Font-Size="14pt" Font-Underline="False" 
+                        ForeColor="#7C6F57" PostBackUrl="~/visitor/kontacts.aspx">Контакты</asp:LinkButton>
+                        </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="Шапка" align="center" colspan="3" valign="bottom">
+                   
+
+                    
+                      <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1"  staticdisplaylevels="2"  
+                      staticsubmenuindent="10px" BackColor="#00414F" 
+                        DynamicHorizontalOffset="2" Font-Names="Times New Roman" Font-Size="14pt" 
+                        ForeColor="#BB8757" BorderColor="#003441" BorderWidth="2px" 
+                        Orientation="Horizontal" RenderingMode="Table" BorderStyle="Outset" 
+                        StaticTopSeparatorImageUrl="~/Properties/images/menu_bg.gif" 
+                        Height="50px"  >
+                        <DynamicHoverStyle BackColor="#02657C" ForeColor="White" Height="50px" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" 
+                            Height="50px" />
+                        <DynamicMenuStyle BackColor="#03677E" Height="50px" />
+                        <DynamicSelectedStyle BackColor="#005260" Height="50px" />
+                        <StaticHoverStyle BackColor="#115D88" ForeColor="White" Height="50px" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" 
+                            Height="50px" />
+                        <StaticSelectedStyle BackColor="#004D61" Height="50px" />
+                           </asp:Menu>
+
+                    </td>
+            </tr>
+            <tr>
+                <td class="ПодМеню" align="center" bgcolor="#F7F6F3" colspan="3">
+                    <table width="800"  >
+                        <tr>
+                            <td>
+                            <div  id="div2LinkButton7"  onmouseover=" MouseFocus(id)" onmouseout="  MouseLost(id)">
+                    <asp:LinkButton ID="LinkButton7" runat="server" ForeColor="Maroon" 
+                        PostBackUrl="~/face/kab.aspx">Личный кабинет</asp:LinkButton>
+                        </div>
+                            </td>
+                            <td>
+                           <div  id="div2LinkButton4" onmouseover=" MouseFocus(id)" onmouseout="  MouseLost(id)">
+                                <asp:LinkButton ID="LinkButton4" runat="server" ForeColor="Maroon" 
+                        PostBackUrl="~/face/profile.aspx">Профиль</asp:LinkButton>
+                        </div>
+                            </td>
+                            <td>
+                            <div  id="div2LinkButton6" onmouseover=" MouseFocus(id)" onmouseout="  MouseLost(id)">
+                                <asp:LinkButton ID="LinkButton6" runat="server" ForeColor="Maroon" 
+                        PostBackUrl="~/face/message.aspx">Сообщения</asp:LinkButton>
+                        </div>
+                            </td>
+                            <td>
+                            <div  id="div2LinkButton5" onmouseover=" MouseFocus(id)" onmouseout="  MouseLost(id)">
+                                <asp:LinkButton ID="LinkButton5" runat="server" ForeColor="Maroon" 
+                        PostBackUrl="~/face/settings.aspx">Настройки</asp:LinkButton>
+                        </div>
+                            </td>
+                            <td>
+                            <div  id="div2LinkButtonKabTeach" onmouseover=" MouseFocus(id)" onmouseout="  MouseLost(id)">
+                                <asp:LinkButton ID="LinkButtonKabTeach" runat="server" ForeColor="Maroon" 
+                        PostBackUrl="~/teacher/kabteacher.aspx" Visible="False">Кабинет преподавателя</asp:LinkButton>
+                        </div>
+                            </td>
+                            <td>
+                            <div  id="div2LinkButtonAdmin" onmouseover=" MouseFocus(id)" onmouseout="  MouseLost(id)">
+                                <asp:LinkButton ID="LinkButtonAdmin" runat="server" ForeColor="Maroon" 
+                        PostBackUrl="~/direct/direct.aspx" Visible="False">Администрирование</asp:LinkButton>
+                        </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="style6" align="left" valign="top">
+                    &nbsp;</td>
+                <td class="Контент" align="center" valign="top" height="800px">
+        
+            
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+           </asp:ContentPlaceHolder>
+                
+           
+                </td>
+                <td class="style2" width="200">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="Низ1" align="center" colspan="3">
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Times New Roman" 
+                        Font-Size="12pt" PathSeparator=" : ">
+                        <CurrentNodeStyle ForeColor="#333333" />
+                        <NodeStyle Font-Bold="True" ForeColor="#7C6F57" />
+                        <PathSeparatorStyle Font-Bold="True" ForeColor="#5D7B9D" />
+                        <RootNodeStyle Font-Bold="True" ForeColor="#5D7B9D" />
+                    </asp:SiteMapPath>
+                    </td>
+            </tr>
+            </table>
+    </div>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+    </form>
+</body>
+</html>
+        
+     

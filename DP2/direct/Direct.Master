@@ -1,0 +1,164 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Direct.master.cs" Inherits="DP2.direct.Direct" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+            <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+  
+
+    <style type="text/css">
+
+        .style2
+        {
+        }
+        .style4
+        {
+            width: 200px;
+        }
+        .style7
+        {
+            width: 486px;
+        }
+           .toptext
+        {
+            color :Aqua;
+            text-align:center;
+            font-size: 12pt;
+        }
+        .style8
+        {
+            border-top: 3px Outset #000000;
+            border-bottom: 3px Outset #000000;
+            background-color : Black;
+        }
+        </style>
+
+    <link href="Direct.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table width="100%">
+            <tr>
+                <td class="style8" colspan="3" align="right" dir="rtl" 
+                    valign="bottom">
+                <table width="200">
+                        <tr>
+                            <td>
+                                <asp:LoginStatus ID="LoginStatus2" runat="server" Font-Size="14pt" Font-Underline="False" 
+                        ForeColor="#6666FF" 
+                        LogoutPageUrl="~/visitor/index.aspx" LogoutAction="Redirect" />
+
+                            </td>
+                            <td>
+    <asp:Menu ID="Menu2" runat="server"  
+                      staticsubmenuindent="10px" BackColor="Black" 
+                        DynamicHorizontalOffset="2" Font-Names="Times New Roman" Font-Size="14pt" 
+                        ForeColor="#7C6F57" BorderColor="#654833" 
+                        Orientation="Horizontal" RenderingMode="Table" Visible="False" 
+                                    CssClass="МенюПользователя"  >
+                        <DynamicHoverStyle BackColor="#4B4334" ForeColor="White"  
+                            CssClass="МенюПользователя" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px"  CssClass="МенюПользователя" />
+                        <DynamicMenuStyle BackColor="#2A2A2A"  CssClass="МенюПользователя" />
+                        <DynamicSelectedStyle BackColor="#FFCC99"  CssClass="МенюПользователя" />
+                            <LevelMenuItemStyles>
+                                <asp:MenuItemStyle Font-Underline="True"  ForeColor="#6681FF" />
+                            </LevelMenuItemStyles>
+                        <StaticHoverStyle BackColor="#333333" ForeColor="#3366CC"  
+                            CssClass="МенюПользователя" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px"  CssClass="МенюПользователя" />
+                        <StaticMenuStyle CssClass="МенюПользователя" />
+                        <StaticSelectedStyle BackColor="#FFCC66"  CssClass="МенюПользователя" />
+                            <Items>
+                                <asp:MenuItem Text="Пользователь" Value="Пользователь" 
+                                    PopOutImageUrl="~/Properties/images/arrowdown.gif">
+                                    <asp:MenuItem NavigateUrl="~/face/kab.aspx" Text="Личный кабинет" 
+                                        Value="Личный кабинет"></asp:MenuItem>
+                                    <asp:MenuItem Text="Мой профиль" Value="Мой профиль" 
+                                        NavigateUrl="~/face/profile.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Сообщения" Value="Сообщения" 
+                                        NavigateUrl="~/face/message.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Настроить" Value="Настроить" 
+                                        NavigateUrl="~/face/settings.aspx"></asp:MenuItem>
+                                </asp:MenuItem>
+                            </Items>
+                    </asp:Menu>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="ПодМенюАдмин" colspan="3" valign="top" align="center">
+               
+                    <asp:Menu ID="Menu3" runat="server" StaticDisplayLevels="2"   
+                        staticsubmenuindent="10px" BackColor="#110C00" 
+                        DynamicHorizontalOffset="2" Font-Names="Times New Roman" Font-Size="14pt" 
+                        ForeColor="#3366CC" BorderColor="#999999" RenderingMode="Table" 
+                        BorderStyle="Outset" BorderWidth="2px" Orientation="Horizontal" >
+
+                        <DynamicHoverStyle BackColor="#4B4334" ForeColor="White"  
+                            CssClass="МенюПользователя" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px"  CssClass="МенюПользователя" />
+                        <DynamicMenuStyle BackColor="#2A2A2A"  CssClass="МенюПользователя" />
+                        <DynamicSelectedStyle BackColor="#FFCC99"  CssClass="МенюПользователя" />
+                            <LevelMenuItemStyles>
+                                <asp:MenuItemStyle Font-Underline="True"  ForeColor="#6681FF" />
+                            </LevelMenuItemStyles>
+                        <StaticHoverStyle BackColor="#333333" ForeColor="#3366CC"  
+                            CssClass="МенюПользователя" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px"  CssClass="МенюПользователя" />
+                        <StaticMenuStyle CssClass="МенюПользователя" />
+                        <StaticSelectedStyle BackColor="#FFCC66"  CssClass="МенюПользователя" />
+                       
+                        <Items>
+                            <asp:MenuItem Text="Администрирование" Value="Администрирование" 
+                                NavigateUrl="~/direct/direct.aspx">
+                                <asp:MenuItem Text="Пользователи" Value="Пользователи" 
+                                    NavigateUrl="~/direct/users.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Дисциплины" Value="Дисциплины" 
+                                    NavigateUrl="~/direct/dirsubject.aspx"></asp:MenuItem>
+<asp:MenuItem Text="Кружки" Value="Кружки" NavigateUrl="~/direct/dirkruzhi.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Теория" Value="Теория" 
+                                    NavigateUrl="~/direct/teorfileload.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Тесты" Value="Тесты" NavigateUrl="~/direct/dirtests.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Задачи" Value="Задачи" NavigateUrl="~/direct/dirtasks.aspx"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                   
+                </td>
+                </tr>
+            <tr>
+                <td class="style4" valign="top">
+                    &nbsp;</td>
+                <td align="center" valign="top" class="КонтентАдмин">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+                <td class="style4" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="Низ1" align="center" valign="top" colspan="3">
+                    <div class="toptext"> <!--Посетители на сайте:  Application["OnlineUsers"].ToString()  -->
+                    </br>
+                    Онлайн: <asp:Label ID="LabelOnline" runat="server"
+                            Text="Нет данных"></asp:Label>
+                    </div>
+                </td>
+            </tr>
+            </table>
+        <br />
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AltSite.master.cs" Inherits="DP2.visitor.AltSite" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form2" runat="server" name="form2">
+    <table style="width:100%;">
+        <tr>
+            <td align="right" colspan="3">
+                    <asp:LinkButton ID="LinkButton2" runat="server" Font-Names="Times New Roman" 
+                        Font-Overline="False" Font-Size="14pt" Font-Underline="False" 
+                        ForeColor="#7C6F57">Контакты</asp:LinkButton>
+                    /<asp:LinkButton ID="LinkButton1" runat="server" Font-Names="Times New Roman" 
+                        Font-Size="14pt" Font-Underline="False" ForeColor="#7C6F57">Обратная связь</asp:LinkButton>
+&nbsp;<asp:LinkButton ID="LinkButton3" runat="server" Font-Names="Times New Roman" Font-Size="14pt" 
+                        Font-Underline="False" ForeColor="#7C6F57" 
+                    PostBackUrl="~/visitor/registration.aspx">Регистрация</asp:LinkButton>
+&nbsp;<asp:LoginName ID="LoginName1" runat="server" Font-Names="Times New Roman" 
+                        Font-Size="14pt" ForeColor="#B32400" />
+                </td>
+        </tr>
+        <tr>
+            <td width="200">
+                &nbsp;</td>
+            <td>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+            </td>
+            <td width="200">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+    </form>
+</body>
+</html>
